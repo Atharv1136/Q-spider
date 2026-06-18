@@ -1,19 +1,21 @@
 div {
     background-color: orange;
     color: aliceblue;
-    height: 200px;
+    height: 100px;
     width: 200px;
 }
 
+/* id selector  */
 #ele1 {
     border-color: black;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
+/* class selector */
 .divs {
     background-color: green;
     color: aliceblue;
