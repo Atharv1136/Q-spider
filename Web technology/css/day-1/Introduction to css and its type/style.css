@@ -4,3 +4,22 @@ div {
     height: 200px;
     width: 200px;
 }
+
+#ele1 {
+    border-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.divs {
+    background-color: green;
+    color: aliceblue;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
