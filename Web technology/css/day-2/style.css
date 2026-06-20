@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    border: 2px solid;
+    height: 200px;
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: space-around; */
+    /* justify-content: space-between; */
+    /* justify-content: space-evenly; */
+    /* align-items: center; */
+    justify-content: center;
+    justify-content: space-between;
+    align-items: end;
+}
+
+div {
+    background-color: blueviolet;
+
+}
+
+span {
+    background-color: bisque;
+
+}
+
+section {
+    background-color: cyan;
+}
