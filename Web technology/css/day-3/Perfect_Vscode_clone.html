@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS CODE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 13px;
+            background: #1e1e1e;
+            color: #ccc;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #titlebar {
+            background: #3c3c3c;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            gap: 8px;
+            user-select: none;
+        }
+
+        .win-btns {
+            display: flex;
+            gap: 6px;
+        }
+
+        .win-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .btn-close {
+            background: #ff5f57;
+        }
+
+        .btn-min {
+            background: #febc2e;
+        }
+
+        .btn-max {
+            background: #28c840;
+        }
+
+        .title {
+            flex: 1;
+            text-align: center;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        #menubar {
+            background: #3c3c3c;
+            display: flex;
+            gap: 2px;
+            padding: 0 4px;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        #menubar span {
+            padding: 3px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        #menubar span:hover {
+            background: #505050;
+        }
+
+        #main {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        #activitybar {
+            width: 48px;
+            background: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 4px;
+            gap: 2px;
+        }
+
+        .abicon {
+            width: 48px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #858585;
+            border-left: 2px solid transparent;
+            font-size: 18px;
+        }
+
+        .abicon:hover {
+            color: #fff;
+        }
+
+        .abicon.active {
+            color: #fff;
+            border-left: 2px solid #007acc;
+        }
+
+        #sidebar {
+            width: 210px;
+            background: #252526;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-right: 1px solid #1a1a1a;
+        }
+
+        .sidebar-title {
+            padding: 8px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #bbb;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            user-select: none;
+        }
+
+        #tree {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .tree-item {
+            padding: 3px 0 3px 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .tree-item:hover {
+            background: #2a2d2e;
+        }
+
+        .tree-item.selected {
+            background: #094771;
+            color: #fff;
+        }
+
+        .tf {
+            color: #c5a028;
+        }
+
+        .th {
+            color: #e37933;
+        }
+
+        .tc {
+            color: #519aba;
+        }
+
+        .sidebar-bottom {
+            border-top: 1px solid #3c3c3c;
+        }
+
+        #editor-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #tabs {
+            background: #2d2d2d;
+            display: flex;
+            border-bottom: 1px solid #1a1a1a;
+            overflow-x: auto;
+            flex-shrink: 0;
+        }
+
+        .tab {
+            padding: 6px 16px;
+            font-size: 13px;
+            color: #969696;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-right: 1px solid #1a1a1a;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .tab.active {
+            background: #1e1e1e;
+            color: #fff;
+            border-top: 1px solid #007acc;
+        }
+
+        .tabx {
+            font-size: 11px;
+            opacity: .6;
+        }
+
+        .tabx:hover {
+            opacity: 1;
+        }
+
+        #breadcrumb {
+            background: #252526;
+            padding: 2px 12px;
+            font-size: 12px;
+            color: #858585;
+            flex-shrink: 0;
+        }
+
+        #editor {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            background: #1e1e1e;
+        }
+
+        #line-numbers {
+            width: 48px;
+            background: #1e1e1e;
+            color: #5a5a5a;
+            font-size: 13px;
+            line-height: 19px;
+            padding: 6px 8px 6px 0;
+            text-align: right;
+            font-family: 'Consolas', 'Courier New', monospace;
+            user-select: none;
+            overflow: hidden;
+            white-space: pre;
+            flex-shrink: 0;
+        }
+
+        #code-editor {
+            flex: 1;
+            overflow: auto;
+            padding: 6px 12px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 19px;
+            outline: none;
+            caret-color: #aeafad;
+            color: #d4d4d4;
+            background: #1e1e1e;
+            border: none;
+            resize: none;
+            width: 100%;
+        }
+
+        #statusbar {
+            height: 22px;
+            background: #007acc;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            gap: 16px;
+            font-size: 12px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .sb-right {
+            margin-left: auto;
+            display: flex;
+            gap: 16px;
+        }
+
+        /* hidden data storage */
+        #file-main,
+        #file-code,
+        #file-css {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hidden textareas store file content safely -->
+    <textarea id="file-main"><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS CODE</title>
+    <link rel="stylesheet" href="./sidebar.css">
+</head>
+
+<body>
+    <nav>
+        <section class="section1">
+            <div>&#127777;</div>
+            <div>File</div>
+            <div>Edit</div>
+            <div>Selection</div>
+            <div>View</div>
+            <div>Go</div>
+            <div>Run</div>
+            <div>Terminal</div>
+            <div>Help</div>
+        </section>
+        <section class="Section2">
+            <div>~~</div>
+            <div>&#128421;</div>
+            <div>&#10060;</div>
+        </section>
+    </nav>
+    <section style="display: flex; background-color: rgb(108, 94, 94); width: 260px; gap: 10px;">
+        <aside>
+            <div class="div1">&#128193; <br><br>&#128100; <br><br>&#128269; <br><br>&#128203;</div>
+            <div class="div2">&#9881; <br><br>&#128100;</div>
+        </aside>
+        <div style="width: 8%;">
+            <h3>explorer</h3>
+            <br>
+            <h3>Day</h3>
+            <a href="./code.html">Index.html</a>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+</body>
+</html></textarea>
+
+    <textarea id="file-code"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code</title>
+</head>
+<body>
+    <h1>code.html</h1>
+    <p>Edit me freely!</p>
+</body>
+</html></textarea>
+
+    <textarea id="file-css">/* sidebar.css */
+
+nav {
+    display: flex;
+    background: #3c3c3c;
+    color: white;
+    padding: 4px 8px;
+    gap: 12px;
+    font-size: 13px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 48px;
+    background: #333;
+    padding: 8px 0;
+    gap: 8px;
+}
+
+section {
+    display: flex;
+    background: #1e1e1e;
+}
+
+.section1 {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.Section2 {
+    margin-left: auto;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}</textarea>
+
+    <!-- Title Bar -->
+    <div id="titlebar">
+        <div class="win-btns">
+            <div class="win-btn btn-close"></div>
+            <div class="win-btn btn-min"></div>
+            <div class="win-btn btn-max"></div>
+        </div>
+        <div class="title">vs code clone</div>
+    </div>
+
+    <!-- Menu Bar -->
+    <div id="menubar">
+        <span contenteditable="true" spellcheck="false">File</span>
+        <span contenteditable="true" spellcheck="false">Edit</span>
+        <span contenteditable="true" spellcheck="false">Selection</span>
+        <span contenteditable="true" spellcheck="false">View</span>
+        <span contenteditable="true" spellcheck="false">Go</span>
+        <span contenteditable="true" spellcheck="false">Run</span>
+        <span contenteditable="true" spellcheck="false">Terminal</span>
+        <span contenteditable="true" spellcheck="false">Help</span>
+    </div>
+
+    <div id="main">
+
+        <!-- Activity Bar -->
+        <div id="activitybar">
+            <div class="abicon active">&#9646;</div>
+            <div class="abicon">&#128269;</div>
+            <div class="abicon">&#9741;</div>
+            <div class="abicon">&#128027;</div>
+            <div class="abicon">&#9707;</div>
+            <div class="abicon" style="margin-top:auto;">&#9881;</div>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <div class="sidebar-title">Explorer</div>
+            <div id="tree">
+                <div class="tree-item">
+                    <span>&#9660;</span>
+                    <span class="tf">&#128193;</span>
+                    <span>VS CODE CLONE</span>
+                </div>
+                <div class="tree-item" style="padding-left:20px;">
+                    <span>&#9658;</span>
+                    <span class="tf">&#128193;</span>
+                    <span>.vscode</span>
+                </div>
+                <div class="tree-item" style="padding-left:20px;">
+                    <span>&#9658;</span>
+                    <span class="tf">&#128193;</span>
+                    <span>assest</span>
+                </div>
+                <div class="tree-item" style="padding-left:36px;" onclick="switchTab('code')">
+                    <span class="th">&#128196;</span>
+                    <span>code.html</span>
+                </div>
+                <div class="tree-item selected" id="tree-main" style="padding-left:36px;" onclick="switchTab('main')">
+                    <span class="th">&#128196;</span>
+                    <span>main.html</span>
+                </div>
+                <div class="tree-item" style="padding-left:36px;" onclick="switchTab('css')">
+                    <span class="tc">&#128196;</span>
+                    <span>sidebar.css</span>
+                </div>
+            </div>
+            <div class="sidebar-bottom">
+                <div class="sidebar-title">Outline</div>
+                <div class="sidebar-title">Timeline</div>
+            </div>
+        </div>
+
+        <!-- Editor Area -->
+        <div id="editor-area">
+
+            <div id="tabs">
+                <div class="tab active" id="tab-main" onclick="switchTab('main')">
+                    <span class="th">&#9632;</span> main.html
+                    <span class="tabx">&#10005;</span>
+                </div>
+                <div class="tab" id="tab-code" onclick="switchTab('code')">
+                    <span class="th">&#9632;</span> code.html
+                    <span class="tabx">&#10005;</span>
+                </div>
+                <div class="tab" id="tab-css" onclick="switchTab('css')">
+                    <span class="tc">&#9632;</span> sidebar.css
+                    <span class="tabx">&#10005;</span>
+                </div>
+            </div>
+
+            <div id="breadcrumb">main.html &gt; html &gt; body &gt; section &gt; aside</div>
+
+            <div id="editor">
+                <div id="line-numbers"></div>
+                <textarea id="code-editor" spellcheck="false" oninput="updateLines()"></textarea>
+            </div>
+
+            <div id="statusbar">
+                <span>&#9741;</span>
+                <span contenteditable="true" spellcheck="false">master</span>
+                <span>&#10003; 0 &nbsp; &#9651; 0</span>
+                <div class="sb-right">
+                    <span id="cursor-pos">Ln 1, Col 1</span>
+                    <span>Spaces: 4</span>
+                    <span>UTF-8</span>
+                    <span>CRLF</span>
+                    <span>HTML</span>
+                    <span>Atharv1136</span>
+                    <span>Port: 5500</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var current = 'main';
+
+        function getContent(name) {
+            return document.getElementById('file-' + name).value;
+        }
+
+        function setContent(name, val) {
+            document.getElementById('file-' + name).value = val;
+        }
+
+        function updateLines() {
+            var ed = document.getElementById('code-editor');
+            var ln = document.getElementById('line-numbers');
+            var lines = ed.value.split('\n').length;
+            var nums = '';
+            for (var i = 1; i <= lines; i++) { nums += i + '\n'; }
+            ln.textContent = nums;
+            setContent(current, ed.value);
+
+            // sync scroll
+            var pos = ed.selectionStart;
+            var before = ed.value.substring(0, pos);
+            var lineNum = before.split('\n').length;
+            var colNum = before.split('\n').pop().length + 1;
+            document.getElementById('cursor-pos').textContent = 'Ln ' + lineNum + ', Col ' + colNum;
+        }
+
+        function switchTab(name) {
+            setContent(current, document.getElementById('code-editor').value);
+            current = name
+            document.getElementById('code-editor').value = getContent(name);
+            updateLines();
+
+            ['main', 'code', 'css'].forEach(function (t) {
+                var tab = document.getElementById('tab-' + t);
+                if (t === name) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            var bc = { main: 'main.html &gt; html &gt; body &gt; section &gt; aside', code: 'code.html &gt; html &gt; body', css: 'sidebar.css' };
+            document.getElementById('breadcrumb').innerHTML = bc[name];
+        }
+
+        // sync line numbers scroll with textarea scroll
+        document.getElementById('code-editor').addEventListener('scroll', function () {
+            document.getElementById('line-numbers').scrollTop = this.scrollTop;
+        });
+
+        document.getElementById('code-editor').addEventListener('keyup', updateLines);
+        document.getElementById('code-editor').addEventListener('click', updateLines);
+
+        switchTab('main');
+    </script>
+
+</body>
+
+</html>
