@@ -73,7 +73,7 @@ Contributions, suggestions, and improvements are welcome.
 **Atharv Bhosale**
 
 * GitHub: https://github.com/Atharv1136
-* Portfolio: https://atharvbhosale.com
+* Portfolio: https://atharvbhosale.site
 
 ## ⭐ Support
 
