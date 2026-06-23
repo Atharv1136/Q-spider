@@ -5,25 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code</title>
+    <link rel="stylesheet" href="https://microsoft.github.io/vscode-codicons/dist/codicon.css">
     <link rel="stylesheet" href="./sidebar.css">
 </head>
 
 <body>
     <nav>
         <section class="section1">
-            <div>File</div>
-            <div>Edit</div>
-            <div>Selection</div>
-            <div>View</div>
-            <div>Go</div>
-            <div>Run</div>
-            <div>Terminal</div>
-            <div>Help</div>
+            <span class="codicon codicon-vscode" title="Visual Studio Code" aria-label="Visual Studio Code"></span>
+            <span>File</span>
+            <span>Edit</span>
+            <span>Selection</span>
+            <span>View</span>
+            <span>Go</span>
+            <span>Run</span>
+            <span>Terminal</span>
+            <span>Help</span>
         </section>
-        <section class="Section2">
-            <div>~</div>
-            <div>[]</div>
-            <div>X</div>
+        <section class="Section2 window-actions">
+            <button type="button" aria-label="Minimize" title="Minimize">
+                <span class="codicon codicon-chrome-minimize"></span>
+            </button>
+            <button type="button" aria-label="Maximize" title="Maximize">
+                <span class="codicon codicon-chrome-maximize"></span>
+            </button>
+            <button type="button" aria-label="Close" title="Close">
+                <span class="codicon codicon-chrome-close"></span>
+            </button>
         </section>
     </nav>
 

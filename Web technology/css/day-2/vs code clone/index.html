@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VS CODE</title>
+    <link rel="stylesheet" href="https://microsoft.github.io/vscode-codicons/dist/codicon.css">
     <link rel="stylesheet" href="./sidebar.css">
 </head>
 
 <body>
     <nav>
         <section class="section1">
+            <span class="codicon codicon-vscode" title="Visual Studio Code" aria-label="Visual Studio Code"></span>
             <div>🍊</div>
             <div>File</div>
             <div>Edit</div>
@@ -21,14 +23,34 @@
             <div>Terminal</div>
             <div>Help</div>
         </section>
-        <Section class="Section2">
+        <section class="Section2 window-actions">
+            <button type="button" aria-label="Minimize" title="Minimize">
+                <span class="codicon codicon-chrome-minimize"></span>
+            </button>
+            <button type="button" aria-label="Maximize" title="Maximize">
+                <span class="codicon codicon-chrome-maximize"></span>
+            </button>
+            <button type="button" aria-label="Close" title="Close">
+                <span class="codicon codicon-chrome-close"></span>
+            </button>
             <div>〰️</div>
             <div>🗃️</div>
             <div>❌</div>
-        </Section>
+        </section>
     </nav>
     <section style="display: flex; background-color: rgb(108, 94, 94); width: 260px; gap: 10px ; ">
         <aside>
+            <div class="activity-icons">
+                <span class="codicon codicon-files active" title="Explorer" aria-label="Explorer"></span>
+                <span class="codicon codicon-search" title="Search" aria-label="Search"></span>
+                <span class="codicon codicon-source-control" title="Source Control" aria-label="Source Control"></span>
+                <span class="codicon codicon-debug-alt" title="Run and Debug" aria-label="Run and Debug"></span>
+                <span class="codicon codicon-extensions" title="Extensions" aria-label="Extensions"></span>
+            </div>
+            <div class="activity-icons bottom-icons">
+                <span class="codicon codicon-account" title="Accounts" aria-label="Accounts"></span>
+                <span class="codicon codicon-gear" title="Manage" aria-label="Manage"></span>
+            </div>
             <div class="div1">📁 <br><br>🔍 <br><br>🐍 <br> <br>▶️</div>
             <div class="div2">⚙️ <br><br>🙍‍♂️</div>
         </aside>
@@ -36,8 +58,8 @@
 
             <h3>explorer</h3>
             <br>
-            <H3">Day</H3>
-                <a href="./code.html">Index.html</a>
+            <h3>Day</h3>
+            <a href="./code.html">Index.html</a>
         </div>
     </section>
 
