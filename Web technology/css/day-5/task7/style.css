@@ -1,0 +1,35 @@
+main {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border: 1px solid black;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boxa {
+    width: 250px;
+    height: 250px;
+    border: 2px solid red;
+
+}
+
+#boxb {
+    width: 250px;
+    height: 350px;
+    border: 2px solid rgb(183, 63, 12);
+
+}
+
+#boxc {
+    width: 450px;
+    height: 250px;
+    border: 2px solid rgb(22, 233, 64);
+
+}

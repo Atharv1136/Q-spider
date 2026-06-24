@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+    height: 8%;
+    align-items: center;
+
+
+
+}
+
+img {
+    display: flex;
+    border-radius: 50%;
+}
