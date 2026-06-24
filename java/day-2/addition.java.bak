@@ -1,0 +1,10 @@
+class addition 
+{
+	public static void main(String[] args) 
+	{
+		byte b1=100;
+		byte b2=50;
+		int sub=b1-b2;
+		system.out.println(sub);
+	}
+}
