@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    width: 800px;
+    height: 300px;
+    border: solid;
+    background-image: url(./assessts/08280444-d702-4659-98f9-fd0c4107239b.png);
+    background-position: center;
+    /* background-size: contain; */
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+}
