@@ -1,0 +1,24 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#box {
+    height: 200px;
+    width: 200px;
+    background: red;
+}
+
+#box:hover {
+    /* height: 400px;
+    width: 400px; */
+    transform: scale(2);
+    /* transform: rotate(100800deg) scale(-2) translate(450px, 450px); */
+    transform: skew(180deg);
+    transition-duration: 5s;
+    /* transition-delay: 2s; */
+
+}
