@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* hide aside scrollbar but keep scroll functionality */
+        aside {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        aside::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    </style>
+
+</head>
+
+<body class="bg-black text-white">
+    <nav class="h-[7vh] bg-black flex items-center justify-between  pr-1 fixed top-0 right-0 left-0">
+        <section class="text-white text-4xl flex items-center gap-4 ">
+            <article class="flex ">
+                <i class="fa-brands fa-spotify gap-[40px]"></i>
+            </article>
+            <article class="flex gap-[20px]">
+                <div class="text-[17px] bg-gray-500 w-[40px] h-[4vh] rounded-[50px] flex justify-center items-center">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <div class="flex gap-[10px] rounded-[10px] bg-[#1F1F1F] w-[25vw] ">
+                    <div class=" h-[30px] text-xl"><i class="fa-solid fa-magnifying-glass pt-2 pl-2"></i></div>
+                    <div class="border-r-2 h-[4vh] w-[350px]  bg text-[30px] flex items-center justify-center ">
+                        <input type="text" placeholder="What you want to play?">
+                    </div>
+                    <div class="text-2xl flex items-center pr-[400px]"><i class="fa-regular fa-window-maximize"></i>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="flex">
+            <article class="flex text-white justify-between gap-[10px] border-r-2 pr-1">
+                <div>Premium</div>
+                <div>Support</div>
+                <div>Download</div>
+            </article>
+            <article class="flex text-white justify-between gap-[10px]">
+                <div><i class="fa-solid fa-arrow-down"></i> Install</div>
+                <div>sign up</div>
+                <div class="bg-gray-500 w-[50px] flex items-center justify-center h-[3vh] rounded-sm">login</div>
+
+            </article>
+        </section>
+    </nav>
+
+    <main class="flex items-start mt-[7vh] mb-[80px] ml-[22%] h-[calc(100vh-7vh-80px)] min-h-0 overflow-hidden">
+        <aside
+            class="fixed top-[7vh] left-0 bottom-[80px] w-[22%] rounded-[20px] bg-[#121212] overflow-y-auto p-2 box-border">
+            <div class="h-[84vh] w-[100%] flex flex-col justify-around">
+                <div class=" h-[10%]   rounded-[20px] flex justify-between items-center   ">
+                    <section class="pl-2 font-bold text-white">Your Library</section>
+                    <section class="pr-2 font-bold w-[2x] bg-[#1F1F1F] rounded-[20px] text-white"><i
+                            class="fa-solid fa-plus "></i>
+                        Create
+                    </section>
+                </div>
+                <div class="h-[40%] w-[100%]">
+                    <section class="w-[100%]  h-[50%]  bg-[#1F1F1F] rounded-[20px] ">
+                        <p class="font-bold text-white pt-2 pl-3 text-xl">Create your first playlist</p>
+                        <p class=" text-white pt-2 pl-3 ">It's easy, we'll help you</p>
+                        <br>
+                        <div
+                            class="font-bold text-black pt-2 pl-3 bg-[#FFFFFF] w-[150px] rounded-[50px] flex items-center pb-2 pl-2">
+                            Create playlist
+                        </div>
+
+                    </section>
+                    <br>
+                    <section class="w-[100%]  h-[50%]  bg-[#1F1F1F] rounded-[20px] ">
+                        <p class="font-bold text-white pt-2 pl-3 text-xl">Let's find some podcasts to follow</p>
+                        <p class=" text-white pt-2 pl-3 ">We'll keep you updated on new episodes</p>
+                        <br>
+                        <div
+                            class="font-bold text-black pt-2 pl-3 bg-[#FFFFFF] w-[150px] rounded-[50px] flex items-center pb-2 pl-2 ">
+                            Browse podcasts
+                        </div>
+
+                    </section>
+
+                </div>
+                <div class="h-[40%] w-  text-white flex  justify-end items-end">
+                    <section class="flex justify-around flex-wrap gap-[10px] text-gray-300">
+                        <a href="#">Legal</a>
+                        <a href="#">Safety & Privacy Center</a>
+                        <a href="#">About</a>
+                        <a href="#">Ads</a>
+                        <a href="#">Accessibility</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">cookie</a>
+                    </section>
+                </div>
+            </div>
+
+        </aside>
+        <section
+            class="content w-full min-h-0 rounded-[20px] bg-[radial-gradient(circle_at_top,_rgba(8,40,38,0.9)_0%,_rgba(8,28,27,0.75)_18%,_#121212_55%,_#121212_100%)] overflow-y-auto h-full p-4 box-border">
+            <article class="h-[40%]">
+                <p class="font-bold text-2xl pl-5">Hindi Songs</p>
+                <section class="flex justify-between items-center pt-3 pl-6 pr-5">
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./arzkiyahai.html" class="block">
+                            <img src="./assets/arz kiya hai.png" alt="Arz Kiya Hai" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./arzkiyahai.html">Arz Kiya Hai | Coke Studio Bharat
+                                Anuv Jain</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./bandhu.html" class="block">
+                            <img src="./assets/bandu.png" alt="Bandhu 2.0" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./bandhu.html">Bandhu 2.0 | Cocktail 2</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./tera-ban-jaunga.html" class="block">
+                            <img src="./assets/tera ban jaunga.jpg" alt="Tera Ban Jaunga" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./tera-ban-jaunga.html">Tera Ban Jaunga | Kabir
+                                Singh</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./tum-se-hi.html" class="block">
+                            <img src="./assets/tum se hi.jpg" alt="Tum Se Hi" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./tum-se-hi.html">Tum Se Hi | Jab We Met</a></p>
+                    </div>
+                </section>
+            </article>
+            <article class="h-[40%]">
+                <p class="font-bold text-2xl pl-5">More Hindi Songs</p>
+                <section class="flex justify-between items-center pt-3 pl-6 pr-5">
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./channa-mereya.html" class="block">
+                            <img src="./assets/channa mere ya.jpg" alt="Channa Mereya" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./channa-mereya.html">Channa Mereya | Ae Dil Hai
+                                Mushkil</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./raabta.html" class="block">
+                            <img src="./assets/rabata.jpg" alt="Raabta" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./raabta.html">Raabta | Agent Vinod</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./tum-hi-ho.html" class="block">
+                            <img src="./assets/tum hi ho.jpg" alt="Tum Hi Ho" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./tum-hi-ho.html">Tum Hi Ho | Aashiqui 2</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./kabira.html" class="block">
+                            <img src="./assets/kabira.jpg" alt="Kabira" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./kabira.html">Kabira | Yeh Jawaani Hai Deewani</a>
+                        </p>
+                    </div>
+                </section>
+            </article>
+            <article class="h-[40%]">
+                <p class="font-bold text-2xl pl-5">Marathi Songs</p>
+                <section class="flex justify-between items-center pt-3 pl-6 pr-5">
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./apsara-aali.html" class="block">
+                            <img src="./assets/apsara ali.jpg" alt="Apsara Aali" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./apsara-aali.html">Apsara Aali | Natarang</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./zingaat.html" class="block">
+                            <img src="./assets/zingat.jpg" alt="Zingaat" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./zingaat.html">Zingaat | Sairat</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./chamke-shivbachi-talvar.html" class="block">
+                            <img src="./assets/camke shivab chi talvar.png" alt="Chamke Shivbachi Talvar"
+                                class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./chamke-shivbachi-talvar.html">Chamke Shivbachi
+                                Talvar</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./shivrajyabhishek-geet.html" class="block">
+                            <img src="./assets/shivrajyabhisaehk.jpg" alt="Shivrajyabhishek Geet"
+                                class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./shivrajyabhishek-geet.html">Shivrajyabhishek
+                                Geet</a></p>
+                    </div>
+                </section>
+            </article>
+            <article class="h-[40%]">
+                <p class="font-bold text-2xl pl-5">More Marathi Songs</p>
+                <section class="flex justify-between items-center pt-3 pl-6 pr-5">
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./har-har-mahadev.html" class="block">
+                            <img src="./assets/har har mahadev.jpg" alt="Har Har Mahadev" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./har-har-mahadev.html">Har Har Mahadev | Title
+                                Track</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./ha-chandra-tujhyasathi.html" class="block">
+                            <img src="./assets/ha chandra tuzyasathi.jpg" alt="Ha Chandra Tujhyasathi"
+                                class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./ha-chandra-tujhyasathi.html">Ha Chandra
+                                Tujhyasathi</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./mala-ved-laagale.html" class="block">
+                            <img src="./assets/mala ved lagal.jpg" alt="Mala Ved Laagale" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./mala-ved-laagale.html">Mala Ved Laagale | Time
+                                Pass</a></p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./shivba-raja-chhatrapati-zala-ra.html" class="block">
+                            <img src="./assets/shivba raj chatrapati.jpg" alt="Shivba Raja Chhatrapati"
+                                class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./shivba-raja-chhatrapati-zala-ra.html">Shivba Raja
+                                Chhatrapati Zala Ra</a></p>
+                    </div>
+                </section>
+            </article>
+            <article class="h-[40%]">
+                <p class="font-bold text-2xl pl-5">One More Row</p>
+                <section class="flex justify-between items-center pt-3 pl-6 pr-5">
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./wajle-ki-bara.html" class="block">
+                            <img src="./assets/wajleki bar.jpg" alt="Wajle Ki Bara" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./wajle-ki-bara.html">Wajle Ki Bara | Natarang</a>
+                        </p>
+                    </div>
+                    <div class="w-[200px] transition-transform duration-300 hover:scale-105">
+                        <a href="./tere-liye.html" class="block">
+                            <img src="./assets/tere liye.webp" alt="Tere Liye" class="w-full rounded-[16px]">
+                        </a>
+                        <p class="pt-3 text-sm leading-5"><a href="./tere-liye.html">Tere Liye | Prince</a></p>
+                    </div>
+                    <div class="border border-amber-50 h-[200px] w-[200px]"></div>
+                    <div class="border border-amber-50 h-[200px] w-[200px]"></div>
+                    <div class="border border-amber-50 h-[200px] w-[200px]"></div>
+                </section>
+            </article>
+        </section>
+    </main>
+
+    <footer
+        class="flex justify-between p-[10px] bg-gradient-to-r from-fuchsia-700 via-purple-500 to-indigo-400 h-20 w-full rounded items-center fixed bottom-0 right-0 left-0">
+        <p class="w-[55%]">
+            Preview of Spotify <br>
+            Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.
+        </p>
+        <div>
+            <i class="fa-solid fa-x"></i>
+        </div>
+
+    </footer>
+</body>
+
+</html>
