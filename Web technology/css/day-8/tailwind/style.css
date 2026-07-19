@@ -1,1 +1,118 @@
-@import "tailwindcss"
+@media (max-width: 720px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        padding: 8px 10px !important;
+        height: auto !important;
+        min-height: 56px;
+    }
+
+    nav>section:first-child {
+        width: 100%;
+        gap: 8px !important;
+        font-size: 24px !important;
+    }
+
+    nav>section:last-child {
+        display: none !important;
+    }
+
+    nav>section:first-child>article:nth-child(2) {
+        width: 100%;
+        gap: 8px !important;
+    }
+
+    nav>section:first-child>article:nth-child(2)>div:nth-child(2) {
+        width: calc(100vw - 92px) !important;
+        max-width: none !important;
+        gap: 6px !important;
+        padding-right: 8px !important;
+    }
+
+    nav>section:first-child>article:nth-child(2)>div:nth-child(2)>div:nth-child(2) {
+        width: 100% !important;
+        height: auto !important;
+        border-right: 0 !important;
+        font-size: 16px !important;
+        justify-content: flex-start !important;
+    }
+
+    nav input {
+        width: 100%;
+        font-size: 16px;
+        background: transparent;
+        outline: none;
+    }
+
+    nav>section:first-child>article:nth-child(2)>div:nth-child(2)>div:nth-child(3) {
+        display: none !important;
+    }
+
+    main {
+        margin-top: 56px !important;
+        margin-left: 0 !important;
+        margin-bottom: 76px !important;
+        height: calc(100vh - 56px - 76px) !important;
+        padding: 0 8px;
+    }
+
+    main>aside {
+        display: none !important;
+    }
+
+    main>.content {
+        padding: 12px !important;
+        border-radius: 12px !important;
+    }
+
+    main>.content>article {
+        height: auto !important;
+        margin-bottom: 16px;
+    }
+
+    main>.content>article>p {
+        padding-left: 4px !important;
+        font-size: 1.6rem !important;
+    }
+
+    main>.content>article>section {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 10px 4px 0 !important;
+        align-items: start !important;
+    }
+
+    main>.content>article>section>div {
+        width: auto !important;
+    }
+
+    main>.content p,
+    main>.content a {
+        font-size: 0.95rem;
+        line-height: 1.35;
+    }
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    footer {
+        height: auto !important;
+        padding: 8px 10px !important;
+        gap: 8px;
+    }
+
+    footer p {
+        width: calc(100% - 32px) !important;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+}
